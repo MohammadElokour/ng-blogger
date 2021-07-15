@@ -1,0 +1,75 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%;}
+body { margin: 0 auto; font-family: Ubuntu, Roboto, "Helvetica Neue", sans-serif; max-width: 1440px;}
+
+// for mobile header menu
+.mat-expansion-panel-header-description, .mat-expansion-indicator{
+  &::after {
+    color: hsl(13, 100%, 72%);
+  }
+}
+.mat-expansion-panel {
+  .mat-expansion-panel-header {
+    font-size: 18px;
+    font-weight: 500;
+    justify-content: center !important;
+    .mat-content {
+      display: inline !important;
+      flex: unset !important;
+      .mat-expansion-panel-header-title {
+        display: inline !important;
+        flex: unset !important;
+        color: hsl(237, 17%, 21%);
+        //color: hsl(207, 13%, 34%);
+      }
+    }
+  }
+  .mat-expanded {
+    .mat-expansion-panel-header-title {
+      color: hsl(207, 13%, 34%) !important;
+    }
+  }
+}
+
+.mat-expansion-panel-body {
+  background-color: rgb(239, 239, 241);
+  padding: 0 85px 0px !important;
+  button {
+    font-family: Overpass;
+    font-weight: bold !important;
+    color: hsl(207, 13%, 34%) !important;
+  }
+}
+
+
+
+// temporary fix for expansion panels during animations until Angular Material Issue is fixed,
+// see https://github.com/angular/material2/issues/13870
+mat-accordion mat-expansion-panel {
+  mat-expansion-panel-header {
+    height: 40px; // height may be different for you
+  }
+  .mat-expansion-panel-content {
+    height: 0;
+  }
+  &.mat-expanded {
+    mat-expansion-panel-header {
+      height: 64px; // height may be different for you
+    }
+    .mat-expansion-panel-content {
+      height: auto;
+    }
+  }
+}
+
+//==========================
+
+
+
+
+
+
+
+
+

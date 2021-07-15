@@ -1,0 +1,104 @@
+@import '../../../shared/responsive';
+
+$ubuntu: Ubuntu;
+$overpass: Overpass;
+$darkBlue: hsl(208, 49%, 24%);
+$gray: hsl(207, 13%, 34%);
+
+@mixin text-styles($color, $fontWeight, $fontSize) {
+  font-family: $overpass;
+  color: $color;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+}
+
+section {
+  position: relative;
+  padding: 30px 10px;
+  height: auto;
+  h2 {
+    @include text-styles($darkBlue, bolder, 40px);
+    margin-top: 120px;
+    text-align: center;
+    @include for-phone-only {
+      margin-top: 100px;
+      font-size: 33px;
+      letter-spacing: -2px;
+    }
+  }
+  .text-layout {
+    margin-top: 120px;
+    margin-left: 120px;
+    width: 35.3%;
+    @media (max-width: 900px)  {
+      margin-top: 20px;
+      text-align: center;
+      width: 90% !important;
+    }
+    @media (min-width: 1200px) and (max-width: 1255px) {
+      margin-left: 20px;
+      width: 40%;
+    }
+    @media (max-width: 1200px)  {
+      margin-left: 20px;
+      width: 50%;
+    }
+    h3 {
+      @include text-styles($darkBlue, bold, 30px);
+      line-height: 35px;
+    }
+    p {
+      margin-top: 25px;
+      line-height: 30px;
+      @include text-styles($gray, normal, 16px);
+      @include for-tablet-landscape-only {
+        width: 60%;
+        margin: auto;
+      }
+      @include for-phone-only {
+        width: 90% !important;
+      }
+      @include for-small-phone {
+        width: 99% !important;
+      }
+    }
+    .text-box {
+      margin-top: 70px;
+      @include for-phone-only {
+        margin-top: 30px;
+      }
+    }
+  }
+  .mobile-svg-container {
+    text-align: center;
+    margin-top: 30px;
+    @include for-tablet-landscape-up {
+      display: none;
+    }
+    .mobile-svg {
+      @include for-small-phone {
+        margin-left: -25px;
+      }
+    }
+  }
+  .desktop-svg {
+    position: absolute;
+    top: 60px;
+    right: -19%;
+    @include for-tablet-landscape-only {
+        display: none;
+    }
+    @media (max-width: 1300px)  {
+      right: -30%;
+    }
+    @media (max-width: 1150px)  {
+      right: -45%;
+    }
+    @media (max-width: 1020px)  {
+      right: -50%;
+    }
+    @media (max-width: 950px)  {
+      right: -55%;
+    }
+  }
+}
