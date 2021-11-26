@@ -1,5 +1,4 @@
-@import '../../shared/responsive';
-
+@import "../../shared/responsive";
 
 $text-size: 22px;
 $text-size-sm: 16px;
@@ -12,33 +11,51 @@ $text-line-height-sm: 22px;
     top: 40%;
     left: 45%;
   }
+
+  @include for-phone-only {
+    left: 47%;
+    top: 30%;
+    font-size: 35px;
+  }
+
+  @include for-small-phone {
+    left: 50%;
+  }
+
   @include for-laptop {
     width: 100%;
     text-align: center;
   }
-  @include for-tablet-landscape-only {
-    font-size: 40px;
-    text-align: center;
-    width: 100%;
-    line-height: 50px;
-    top: 33%;
-    left: 50%;
-  }
+
+  font-size: 40px;
+  text-align: center;
+  width: 100%;
+  line-height: 50px;
+  top: 33%;
+  left: 50%;
 }
 
 @mixin h3-layout {
   @include for-tablet-portrait-up {
-    font-size: 18px;
+    font-size: 25px;
     top: 52%;
     left: 47%;
   }
-  @include for-tablet-landscape-only {
-    text-align: center;
-    font-size: 22px;
-    width: 90%;
-    top: 50%;
-    left: 50%;
+
+  @include for-phone-only {
+    font-size: 25px;
+    top: 40%;
   }
+
+  @include for-small-phone {
+    top: 45%;
+  }
+
+  text-align: center;
+  font-size: 22px;
+  width: 90%;
+  top: 50%;
+  left: 50%;
 }
 
 @mixin text-size {
@@ -51,16 +68,20 @@ $text-line-height-sm: 22px;
 }
 
 @mixin shared-layout {
-    position: absolute;
-    font-family: Ubuntu;
-    transform: translate(-50%, 0);
-    z-index: 10;
+  position: absolute;
+  font-family: Ubuntu;
+  transform: translate(-50%, 0);
+  z-index: 10;
 }
 
 header {
   position: relative;
   background: rgb(250, 250, 250);
-  background-image: linear-gradient(to right,  hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+  background-image: linear-gradient(
+    to right,
+    hsl(13, 100%, 72%),
+    hsl(353, 100%, 62%)
+  );
   height: 500px;
   overflow: hidden;
   border-radius: 0px 0px 0px 60px;
@@ -130,7 +151,11 @@ header {
         font-family: Ubuntu;
         margin-top: 10px;
         color: white;
-        background-image: linear-gradient(to right,  hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+        background-image: linear-gradient(
+          to right,
+          hsl(13, 100%, 72%),
+          hsl(353, 100%, 62%)
+        );
         padding: 15px;
         width: 55%;
         border-radius: 30px;
@@ -199,6 +224,7 @@ header {
       border-radius: 30px;
       @include for-phone-only {
         margin-left: 110px;
+        white-space: nowrap;
         padding: 18px 25px;
       }
       padding: 12px 20px;
@@ -280,7 +306,7 @@ header {
         button {
           font-family: Overpass;
           &::after {
-            content: '\203A';
+            content: "\203A";
             margin-left: 10px;
             font-size: 18px;
             font-family: Arial, Helvetica, sans-serif;

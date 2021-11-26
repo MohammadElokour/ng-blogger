@@ -1,0 +1,13 @@
+$ubuntu: Ubuntu;
+$overpass: Overpass;
+$lineHeight: 1;
+$darkBlue: hsl(208, 49%, 24%);
+$gray: hsl(207, 13%, 34%);
+
+@mixin text-styles($color, $lineHeight, $fontWeight, $fontSize) {
+  font-family: $overpass;
+  color: $color;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+}

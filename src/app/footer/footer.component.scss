@@ -1,0 +1,62 @@
+@import '../../shared/responsive';
+@import '../../shared/shared';
+
+.footer {
+  @include for-phone-only {
+    height: auto;
+    text-align: center;
+  }
+  height: 250px;
+  border-top-right-radius: 100px;
+  background-color: #24242C;
+  padding: 70px 0px;
+  @include for-tablet-portrait-only {
+    padding-bottom: 100px;
+  }
+  .logo-container {
+    margin-left: 150px;
+    @include for-phone-only {
+      margin-top: 20px;
+      margin-left: 0px;
+      text-align: center;
+    }
+  }
+  .links-container {
+    width: 70%;
+    margin: auto;
+    margin-right: 150px;
+    margin-top: -30px;
+    display: flex;
+    justify-content: space-around;
+    @include for-tablet-portrait-only {
+      margin-top: 50px;
+    }
+    .link-navs {
+      @include for-phone-only {
+        margin-top: 50px;
+      }
+      display: flex;
+      flex-direction: column;
+      p {
+        @include text-styles(rgba(255, 255, 255, 1), 1, bold, 16px);
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          @include text-styles(rgba(255, 255, 255, 0.7), 2, bold, 16px);
+          &:hover {
+            cursor: pointer;
+            color: rgba(255, 255, 255, 1);
+          }
+        }
+      }
+    }
+
+    @include for-phone-only {
+      margin: auto;
+      flex-direction: column;
+    }
+  }
+
+}
